@@ -4,9 +4,9 @@
 int main(int argc, char *argv[])
 {
     if (argc != 3) {
-    printf("Error, this program requires 3 arguments!\n");
-    printf("%s [source file] [target file]\n", argv[0]);
-    return 1;
+        printf("Error, this program requires 3 arguments!\n");
+        printf("%s [source file] [target file]\n", argv[0]);
+        return 1;
     }
 
     FILE *fileSrc, *fileDst;
