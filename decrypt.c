@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
     fileDst = fopen(argv[2], "w");
     if (!fileDst){
         perror("err fileDst");
-        puts("Cannot create dec.txt");
         fclose(fileSrc);
         return 1;
     }
@@ -39,7 +38,6 @@ int main(int argc, char *argv[])
 
     fclose(fileSrc);
     fclose(fileDst);
-    printf("File %s is decrypt into dec.txt!\n", argv[2]);
 
     return 0;
 }
