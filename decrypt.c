@@ -3,6 +3,12 @@
 
 int main(int argc, char *argv[])
 {
+    if (argc != 3) {
+    printf("Error, this program requires 3 arguments!\n");
+    printf("%s [source file] [target file]\n", argv[0]);
+    return 1;
+    }
+
 	FILE *fileSrc, *fileDst;
     size_t i, read_ret;
 
@@ -10,7 +16,7 @@ int main(int argc, char *argv[])
     if (!fileSrc){
         perror("err fileSrc");
         printf("Cannot open file: %s\n", argv[1]);
-        return;
+        return 1;
     }
 
     fileDst = fopen(argv[2], "w");
@@ -18,7 +24,7 @@ int main(int argc, char *argv[])
         perror("err fileDst");
         puts("Cannot create dec.txt");
         fclose(fileSrc);
-        return;
+        return 1;
     }
 
     do {
